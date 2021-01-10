@@ -8,15 +8,3 @@ before_install:
     
 script:
     - docker run -e CI=true wn.ai/wn-react-template-docker npm run test
-
-deploy:
-    provider: elasticbeanstalk
-    region: "eu-central-1"
-    app: "app-name"
-    env: "env-name"
-    bucket_name: "elasticbeanstalk-eu-central-1-XYZBLAHBLAH"
-    bucket_path: "app-name"
-    on:
-        branch: master
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key: $AWS_SECRET_KEY
